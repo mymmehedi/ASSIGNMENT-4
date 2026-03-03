@@ -55,7 +55,7 @@
             <hr class="border-slate-200 mb-6">
             <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
                 <h2 class="font-syne text-xl font-bold text-navy">Available Jobs</h2>
-                <span class="text-sm text-slate-500 font-medium"><span>8</span> jobs</span>
+                <span class="text-sm text-slate-500 font-medium"><span id="job-stat">8</span> jobs</span>
             </div>
             <div class="flex flex-wrap gap-2 mb-5">
                 <button id="tab-all"
@@ -392,8 +392,8 @@
                 <section class="hidden flex flex-col gap-2 font-bold" id="interview-container">Interview Section</Section></section>
                 <section class="hidden flex flex-col gap-2 font-bold" id="reject-container">Reject Section</section>
             </div>
-            <div id="empty-slate"
-            class="hidden flex-col items-center justify-center py-20 gap-4 text-center">
+            <div id="empty-stat"
+            class=" flex-col items-center justify-center py-20 gap-4 text-center">
                 <div class="text-7xl opacity-20">📄</div>
                 <p class="font-syne text-lg font-bold text-navy">No jobs available</p>
                 <p class="text-sm text-slate-400">Check back soon for new job opportunities</p>
