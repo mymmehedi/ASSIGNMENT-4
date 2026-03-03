@@ -64,7 +64,7 @@ const rejectStat = document.getElementById("stat-reject");
 const emptyStat = document.getElementById("empty-stat");
 const jobStat = document.getElementById("job-stat");
 
-totalStat.innerText = allContainer.children.length;
+// totalStat.innerText = allContainer.children.length;
 // interviewStat.innerText = allContainer.children.length;
 // rejectStat.innerText = allContainer.children.length;
 
@@ -80,17 +80,15 @@ document.getElementById("jobs-container").addEventListener("click", function(eve
     if(clickedElement.classList.contains("interview")){
         status.innerText = "Interviewed";
         interviewContainer.appendChild(card);
-        updateStat();
     }
     if(clickedElement.classList.contains("rejected")){
         status.innerText = "Rejected";
         rejectedContainer.appendChild(card);
-        updateStat();
     }
     if(clickedElement.classList.contains("delete")){
         parent.removeChild(card);
-        updateStat();
     }
+    updateStat();
 });
 function updateStat(){
     // totalStat.innerText = allContainer.children.length;
@@ -100,14 +98,17 @@ function updateStat(){
     const counts = {
         all: allContainer.children.length,
         interview: interviewContainer.children.length,
-        reject: rejectedContainer.children.length,
+        rejected: rejectedContainer.children.length,
     };
+    console.log(counts);
+    
     totalStat.innerText = counts.all;
     interviewStat.innerText = counts.interview;
-    rejectStat.innerText = counts.reject;
-    
+    rejectStat.innerText = counts.rejected;
+    console.log(rejectStat);
     
     jobStat.innerText = counts[currentTab];
+    console.log(currentTab);
     
     if(counts[currentTab]< 1){
         emptyStat.classList.remove("hidden");
